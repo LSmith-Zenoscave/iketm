@@ -3,6 +3,7 @@
 # pylint: disable=redefined-outer-name
 
 import pytest
+
 from iketm.iketm import IkeTM
 
 
@@ -14,5 +15,5 @@ def iketm():
 def test_tasks(iketm):
     try:
         iketm.tasks()
-    except:
-        assert False, "commands should should never throw"
+    except RuntimeError as err:
+        assert False, f"commands should should never throw: {err}"

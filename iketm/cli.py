@@ -1,6 +1,7 @@
 """Console script for iketm."""
 
 import fire
+
 from .iketm import IkeTM
 
 
