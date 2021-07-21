@@ -74,6 +74,9 @@ iketm = 'iketm.cli:main'
 name = "cz_conventional_commits"
 version = "0.0.1"
 tag_format = "$version"
+version_files = [
+    "src/__version__.py"
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
