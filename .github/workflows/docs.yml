@@ -1,4 +1,4 @@
-name: release & publish workflow
+name: Build & Publish Documentation
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
 
       - name: pre-publish documentation
         run: |
-          poetry install -E doc
+          poetry install -E doc -E dev
           poetry run cz changelog
           poetry run mkdocs build
 
