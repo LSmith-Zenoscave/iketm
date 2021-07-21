@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+export PREFIX="poetry run python -m "
+if [ -d 'venv' ] ; then
+    export PREFIX="venv/bin/"
+fi
+
+${PREFIX}pytest --cov-report term-missing --cov-report=xml:coverage.xml --cov=iketm tests/
+${PREFIX}black iketm tests --check
+${PREFIX}isort --check-only iketm tests
+${PREFIX}flake8 iketm/ tests/
+${PREFIX}pydocstyle --convention=google --add-ignore=D1,D415

@@ -27,24 +27,25 @@ packages = [
 python = ">=3.6.1,<4.0"
 fire = "0.4.0"
 
-black  = { version = "20.8b1", optional = true}
-isort  = { version = "5.6.4", optional = true}
-flake8  = { version = "3.8.4", optional = true}
+black  = { version = "20.8b1", optional = true }
+commitizen = { version = "^2.17.13", optional = true }
+isort  = { version = "5.6.4", optional = true }
+flake8  = { version = "3.8.4", optional = true }
 flake8-docstrings = { version = "^1.6.0", optional = true }
-pytest  = { version = "6.1.2", optional = true}
-pytest-cov  = { version = "2.10.1", optional = true}
-tox  = { version = "^3.20.1", optional = true}
-virtualenv  = { version = "^20.2.2", optional = true}
-pip  = { version = "^20.3.1", optional = true}
-mkdocs  = { version = "^1.1.2", optional = true}
-mkdocs-include-markdown-plugin  = { version = "^1.0.0", optional = true}
-mkdocs-material  = { version = "^6.1.7", optional = true}
-mkdocstrings  = { version = "^0.13.6", optional = true}
-mkdocs-material-extensions  = { version = "^1.0.1", optional = true}
-twine  = { version = "^3.3.0", optional = true}
-mkdocs-autorefs = {version = "0.1.1", optional = true}
-pre-commit = {version = "^2.12.0", optional = true}
-toml = {version = "^0.10.2", optional = true}
+pytest  = { version = "6.1.2", optional = true }
+pytest-cov  = { version = "2.10.1", optional = true }
+tox  = { version = "^3.20.1", optional = true }
+virtualenv  = { version = "^20.2.2", optional = true }
+pip  = { version = "^20.3.1", optional = true }
+mkdocs  = { version = "^1.1.2", optional = true }
+mkdocs-include-markdown-plugin  = { version = "^1.0.0", optional = true }
+mkdocs-material  = { version = "^6.1.7", optional = true }
+mkdocstrings  = { version = "^0.13.6", optional = true }
+mkdocs-material-extensions  = { version = "^1.0.1", optional = true }
+twine  = { version = "^3.3.0", optional = true }
+mkdocs-autorefs = {version = "0.1.1", optional = true }
+pre-commit = {version = "^2.12.0", optional = true }
+toml = {version = "^0.10.2", optional = true }
 
 [tool.poetry.extras]
 test = [
@@ -56,7 +57,7 @@ test = [
     "pytest-cov"
     ]
 
-dev = ["tox", "pre-commit", "virtualenv", "pip", "twine", "toml"]
+dev = ["commitizen", "tox", "pre-commit", "virtualenv", "pip", "twine", "toml"]
 
 doc = [
     "mkdocs",
@@ -70,10 +71,15 @@ doc = [
 [tool.poetry.scripts]
 iketm = 'iketm.cli:main'
 
+
+[tool.poetry.dev-dependencies]
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.0.1"
 tag_format = "$version"
+version_files = [
+    "src/__version__.py"
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
