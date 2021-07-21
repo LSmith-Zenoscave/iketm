@@ -1,10 +1,11 @@
 """Console script for iketm."""
 
 import fire
+from .iketm import IkeTM
 
 
 def main():
-    fire.Fire({"help": help})
+    fire.Fire(IkeTM)
 
 
 if __name__ == "__main__":
